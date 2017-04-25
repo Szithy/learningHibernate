@@ -11,11 +11,14 @@
         <property name="name" type="java.lang.String">
             <column name="NAME" />
         </property>
-        <property name="total" type="int">
-            <column name="TOTAL" />
-        </property>
-        <property name="goal" type="int">
-            <column name="GOAL" />
-        </property>
+        
+        <component name="proteinData">
+	        <property name="total" type="int">
+	            <column name="TOTAL" />
+	        </property>
+	        <property name="goal" type="int">
+	            <column name="GOAL" />
+	        </property>
+        </component>
     </class>
 </hibernate-mapping>
