@@ -24,6 +24,8 @@ public class Program {
 		System.out.println(loadedUser.getName());
 		System.out.println(loadedUser.getGoal());
 		
+		loadedUser.setTotal(loadedUser.getTotal() + 50);
+		
 		session.getTransaction().commit();
 		
 		session.close();
