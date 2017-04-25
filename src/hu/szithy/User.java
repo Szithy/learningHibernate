@@ -1,8 +1,10 @@
 package hu.szithy;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public class User {
@@ -12,7 +14,7 @@ public class User {
 
 	private ProteinData proteinData = new ProteinData();
 	
-	private List<UserHistory> history = new ArrayList<UserHistory>();
+	private Map<String, UserHistory> history = new HashMap<String, UserHistory>();
 	
 	public int getId() {
 		return id;
@@ -32,10 +34,10 @@ public class User {
 	public void setProteinData(ProteinData proteinData) {
 		this.proteinData = proteinData;
 	}
-	public List<UserHistory> getHistory() {
+	public Map<String, UserHistory> getHistory() {
 		return history;
 	}
-	public void setHistory(List<UserHistory> history) {
+	public void setHistory(Map<String, UserHistory> history) {
 		this.history = history;
 	}
 	
