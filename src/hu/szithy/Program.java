@@ -17,7 +17,17 @@ public class Program {
 		session.save(user);
 		
 		session.getTransaction().commit();
+		
+		session.beginTransaction();
+		
+		User loadedUser = (User) session.load(User.class,1);
+		System.out.println(loadedUser.getName());
+		System.out.println(loadedUser.getGoal());
+		
+		session.getTransaction().commit();
+		
 		session.close();
+		
 		HibernateUtilities.getSessionFactory().close();
 	}
 
