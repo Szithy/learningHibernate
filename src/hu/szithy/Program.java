@@ -23,7 +23,7 @@ public class Program {
 		
 		session.beginTransaction();
 		
-		User loadedUser = (User) session.load(User.class,9);
+		User loadedUser = (User) session.load(User.class,1);
 		System.out.println(loadedUser.getName());
 		System.out.println(loadedUser.getProteinData().getGoal());
 		
