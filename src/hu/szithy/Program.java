@@ -19,7 +19,8 @@ public class Program {
 		user.getProteinData().setGoal(250);
 		user.addHistory(new UserHistory(new Date(), "Set the goal to 250"));
 		
-		user.setGoalAlert(new GoalAlert("Congrats'"));
+		user.getGoalAlerts().add(new GoalAlert("Congrats!"));
+		user.getGoalAlerts().add(new GoalAlert("You did it!"));
 		
 		session.save(user);
 		
