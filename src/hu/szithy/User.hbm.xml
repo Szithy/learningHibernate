@@ -21,13 +21,10 @@
 	        </property>
         </component>
         
-        <map name="history" table="USER_HISTORY">
-        	<key column="ID"/>
-        	<map-key type="string" column="ENTRY_IDENTIFIER"/>
-        	<composite-element class="hu.szithy.UserHistory">
-        		<property name="entryTime" type="date" column="ENTRY_TIME"/>
-        		<property name="entry" type="string" column="ENTRY"/>
-        	</composite-element>
-        </map>
+        <list name="history" table="USER_HISTORY" inverse="true" cascade="save-update">
+        	<key column="USER_ID"/>
+        	<list-index column="POSITION"/>
+        	<one-to-many class="hu.szithy.UserHistory"/>
+        </list>
     </class>
 </hibernate-mapping>

@@ -14,7 +14,7 @@ public class User {
 
 	private ProteinData proteinData = new ProteinData();
 	
-	private Map<String, UserHistory> history = new HashMap<String, UserHistory>();
+	private List<UserHistory> history = new ArrayList<UserHistory>();
 	
 	public int getId() {
 		return id;
@@ -34,11 +34,16 @@ public class User {
 	public void setProteinData(ProteinData proteinData) {
 		this.proteinData = proteinData;
 	}
-	public Map<String, UserHistory> getHistory() {
+	public List<UserHistory> getHistory() {
 		return history;
 	}
-	public void setHistory(Map<String, UserHistory> history) {
+	public void setHistory(List<UserHistory> history) {
 		this.history = history;
+	}
+	
+	public void addHistory(UserHistory historyItem){
+		historyItem.setUser(this);
+		history.add(historyItem);
 	}
 	
 }
