@@ -12,8 +12,8 @@
             <column name="NAME" />
         </property>
         
-		<one-to-one name="proteinData" class="hu.szithy.ProteinData" cascade="save-update"></one-to-one>
-        
+		<many-to-one name="proteinData" class="hu.szithy.ProteinData" cascade="save-update" column="PROTEIN_DATA_ID" unique="true"/>
+		
         <list name="history" table="USER_HISTORY" inverse="true" cascade="save-update">
         	<key column="USER_ID"/>
         	<list-index column="POSITION"/>
