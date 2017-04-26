@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map.Entry;
 
 import org.hibernate.Session;
+import org.hibernate.query.Query;
 
 public class Program {
 
@@ -12,6 +13,18 @@ public class Program {
 		System.out.println("Hello world!");
 		
 		PopulateSimpleData();
+		
+		Session session = HibernateUtilities.getSessionFactory().openSession();
+		session.beginTransaction();
+		
+		Query query = session.createQuery("select user from User as user where user.name = :name").setString("name", "Joe");
+		List<User> users = query.list();
+		for(User user :  users){
+			System.out.println(user.getName());
+		}
+		
+		session.getTransaction().commit();
+		session.close();
 		
 		HibernateUtilities.getSessionFactory().close();
 	}
