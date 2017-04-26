@@ -12,14 +12,7 @@
             <column name="NAME" />
         </property>
         
-        <component name="proteinData">
-	        <property name="total" type="int">
-	            <column name="TOTAL" />
-	        </property>
-	        <property name="goal" type="int">
-	            <column name="GOAL" />
-	        </property>
-        </component>
+		<one-to-one name="proteinData" class="hu.szithy.ProteinData" cascade="save-update"></one-to-one>
         
         <list name="history" table="USER_HISTORY" inverse="true" cascade="save-update">
         	<key column="USER_ID"/>
