@@ -12,5 +12,6 @@
   <mapping resource="hu/szithy/User.hbm.xml"/>
   <mapping resource="hu/szithy/UserHistory.hbm.xml"/>
   <mapping resource="hu/szithy/ProteinData.hbm.xml"/>
+  <mapping resource="hu/szithy/GoalAlert.hbm.xml"/>
  </session-factory>
 </hibernate-configuration>

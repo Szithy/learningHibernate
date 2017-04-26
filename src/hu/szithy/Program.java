@@ -18,6 +18,9 @@ public class Program {
 		user.addHistory(new UserHistory(new Date(), "Set name to Adam"));
 		user.getProteinData().setGoal(250);
 		user.addHistory(new UserHistory(new Date(), "Set the goal to 250"));
+		
+		user.setGoalAlert(new GoalAlert("Congrats'"));
+		
 		session.save(user);
 		
 		session.getTransaction().commit();
