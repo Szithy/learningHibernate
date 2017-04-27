@@ -17,10 +17,20 @@ public class Program {
 		Session session = HibernateUtilities.getSessionFactory().openSession();
 		session.beginTransaction();
 		
-		Query query = session.createQuery("select user from User as user where user.name = :name").setString("name", "Joe");
-		List<User> users = query.list();
-		for(User user :  users){
-			System.out.println(user.getName());
+		
+		Query query2 = session.createQuery("select new hu.szithy.UserTotal(user.name,user.proteinData.total)" +
+		"from User user");
+		
+		List<UserTotal> uts = query2.list();
+		for(UserTotal ut :  uts){
+			System.out.println(ut.getName()+ " "+ut.getTotal());
+		}
+		
+		
+		Query query = session.getNamedQuery("AllGoalAlerts");
+		List<GoalAlert> alerts = query.list();
+		for(GoalAlert alert :  alerts){
+			System.out.println(alert.getMessage());
 		}
 		
 		session.getTransaction().commit();
